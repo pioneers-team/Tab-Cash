@@ -40,7 +40,6 @@ class PageViewWidget extends StatelessWidget {
             fontSize: 18.0,
             color: const Color(0xFF5F5E5E),
           ),),
-          // const SizedBox(height: 80.0,),
 
         ],
       ),
