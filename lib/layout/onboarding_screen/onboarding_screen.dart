@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/core/styles/colors.dart';
+import 'package:tab_cash/layout/onboarding_screen/widget/page_view_widget.dart';
+import 'package:tab_cash/layout/success_screen.dart';
 
 import 'onboard_model.dart';
 
@@ -30,7 +32,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   final List<OnboardingModel> listOnboardData = [
-    OnboardingModel(image: AppImages.egLogo,
+    OnboardingModel(image: AppImages.trans2Svg,
         title: 'Transfer Money',
         description: 'Send money to anyone ,typically fast and secure, with transaction history stored in the app.'),
     OnboardingModel(image: AppImages.transMoneySvg,
@@ -53,9 +55,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             if (isLast) {
               // nav to login screen
               print('done nav');
-              Navigator.pushNamedAndRemoveUntil(context, 'Login.id', (route) {
-                return false;
-              });
+              Navigator.
+              push(context, MaterialPageRoute(builder: (context) => const SuccessScreen(),));
+
             } else {
               _controller.nextPage(duration: const Duration(milliseconds: 800),
                   curve: Curves.easeIn);
@@ -65,71 +67,43 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: const Icon(
             Icons.arrow_forward, color: Colors.white, size: 32,),
         ),
-        body: PageView.builder(
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (context, index) =>
-              PageViewWidget(onboardingData: listOnboardData[index],
-                  controller: _controller),
-          scrollDirection: Axis.horizontal,
-          onPageChanged: (int i) {
-            if (i == listOnboardData.length - 1) {
-              setState(() {
-                isLast = true;
-              });
-            } else {
-              setState(() {
-                isLast = false;
-              });
-            }
-          },
-          controller: _controller,
-
-
-        ),
-      ),
-    );
-  }
-}
-
-class PageViewWidget extends StatelessWidget {
-  const PageViewWidget({
-    super.key,
-    required this.onboardingData,
-    required PageController controller,
-  }) : _controller = controller;
-
-  final OnboardingModel onboardingData;
-  final PageController _controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(16.0),
-            child: Center(child: SvgPicture.asset(onboardingData.image)),
-          ),
-          Text(onboardingData.title, style: GoogleFonts.poppins(
-            fontWeight: FontWeight.bold,
-            fontSize: 30.0,
-            color: Colors.black,
-          ),),
-          Text(onboardingData.description, style: GoogleFonts.poppins(
-            fontSize: 18.0,
-            color: const Color(0xFF5F5E5E),
-          ),),
-          const SizedBox(height: 80.0,),
-          SmoothPageIndicator(
-            controller: _controller, count: 3,
-            effect: const ExpandingDotsEffect(
-                activeDotColor: AppColors.primary
+        body: Stack(
+          children: [
+            PageView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) =>
+                  PageViewWidget(onboardingData: listOnboardData[index],
+                      controller: _controller),
+              scrollDirection: Axis.horizontal,
+              onPageChanged: (int i) {
+                if (i == listOnboardData.length - 1) {
+                  setState(() {
+                    isLast = true;
+                  });
+                } else {
+                  setState(() {
+                    isLast = false;
+                  });
+                }
+              },
+              controller: _controller,
             ),
-          )
-        ],
+
+            Positioned(
+              bottom: 0,
+              left: 0,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 24.0,bottom: 32.0),
+                child: SmoothPageIndicator(
+                  controller: _controller, count: 3,
+                  effect: const ExpandingDotsEffect(
+                      activeDotColor: AppColors.primary
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
