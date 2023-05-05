@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.poineers_team.tab_cash">
    <application
-        android:label="tab_cash"
+        android:label="Tab Cash"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
