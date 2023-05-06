@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:tab_cash/core/styles/colors.dart';
+import 'package:tab_cash/core/components/custom_TextField.dart';
 
-import '../../core/components/custom_TextField.dart';
 import '../../core/components/custom_button.dart';
+import '../../core/styles/colors.dart';
 
-class LoginScreen extends StatelessWidget {
 
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
-    return Scaffold(
+    return  Scaffold(
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
           child: SafeArea(
             child: Form(
-              key: formKey,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   Text(
-                    "Sign in to your account ",
+                  Text(
+                    "Create an account",
                     style: Theme.of(context).textTheme.displayMedium!.copyWith(
                         color: AppColors.secondColor,
                         fontSize: 25,
@@ -33,8 +29,8 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(
                     height: 8.0,
                   ),
-                   Text(
-                    "Enter your phone number and password",
+                  Text(
+                    "Let’s get started with your e-wallet",
                     style: Theme.of(context).textTheme.displayMedium!.copyWith(
                         color: Colors.grey,
                         fontSize: 14,
@@ -43,11 +39,39 @@ class LoginScreen extends StatelessWidget {
                   ),
 
                   const SizedBox(
-                    height: 70.0,
+                    height: 60.0,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width/2.47,
+                        child: CustomTextField(
+                            keyboardType: TextInputType.text, label: "First Name"),
+                      ),
+                      const SizedBox(
+                        width: 30.0,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width/2.4,
+                        child: CustomTextField(
+                            keyboardType: TextInputType.text, label: "Last Name"),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20.0,
                   ),
 
-                  // Text Form Field:::
 
+                  // Text Form Field:::
+                  CustomTextField(
+                    keyboardType: TextInputType.number,
+                    label: "Enter Your ID Number",
+
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
                   CustomTextField(
                     label: 'Enter Phone Number',
                     keyboardType: TextInputType.phone,
@@ -62,20 +86,6 @@ class LoginScreen extends StatelessWidget {
                     suffixIcon: Icons.visibility_outlined,
                   ),
 
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Forget Password?",
-                        style:Theme.of(context).textTheme.displayMedium!.copyWith(
-                          color: AppColors.primary,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700
-                        ),
-                      ),
-                    ),
-                  ),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -83,8 +93,9 @@ class LoginScreen extends StatelessWidget {
                     context,
                     onTap:(){},
                     color: AppColors.secondColor,
-                    label: "Login",
+                    label: "Continue",
                   ),
+
                   const SizedBox(
                     height: 8.0,
                   ),
@@ -92,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Don’t have an account?",
+                        "Already have an account?",
                         style: TextStyle(
                           color: AppColors.secondColor,
                           fontSize: 14,
@@ -102,7 +113,7 @@ class LoginScreen extends StatelessWidget {
                       TextButton(
                         onPressed: () {},
                         child: const Text(
-                          "Sign Up",
+                          "Login",
                           style: TextStyle(
                             color: AppColors.primary,
                             fontSize: 16,
@@ -112,6 +123,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+
                 ],
               ),
             ),
