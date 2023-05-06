@@ -9,7 +9,9 @@ class CustomTextField extends StatefulWidget {
   String? Function(String? val)? validate;
   final int? num;
   IconData? suffixIcon;
+  TextEditingController ? controller = TextEditingController();
   CustomTextField({
+     this.controller,
     required this.keyboardType,
     this.validate,
     this.obscureText =false,
@@ -29,13 +31,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: const EdgeInsets.symmetric( vertical: 5),
       decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey)
       ),
       child: TextFormField(
+        controller: widget.controller,
         keyboardType: widget.keyboardType,
         validator: widget.validate,
         obscureText:widget.obscureText,
