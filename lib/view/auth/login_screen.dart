@@ -3,12 +3,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 
 import '../../core/components/custom_TextField.dart';
+import '../../core/components/custom_button.dart';
 
 class LoginScreen extends StatelessWidget {
+
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Center(
         child: Padding(
@@ -62,6 +66,42 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                customButton(
+                  context,
+                  onTap:(){},
+                  color: AppColors.secondColor,
+                  label: "Login",
+                ),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Don’t have an account?",
+                      style: TextStyle(
+                        color: AppColors.secondColor,
+                        fontSize: 14,
+                        //fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontSize: 16,
+                          //fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
