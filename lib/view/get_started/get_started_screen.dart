@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tab_cash/core/components/custom_button.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 
 class GetStartedScreen extends StatelessWidget {
@@ -12,16 +13,15 @@ class GetStartedScreen extends StatelessWidget {
       backgroundColor: AppColors.secondColor,
       body: Column(
         children: [
-           Container(
-             width: double.infinity,
-             child: Image(
-               fit: BoxFit.contain,
+          Container(
+            width: double.infinity,
+            child: Image(
+              fit: BoxFit.contain,
               image: AssetImage(
                 "assets/images/smart card.png",
-
               ),
+            ),
           ),
-           ),
           Expanded(
             child: Container(
               // width: screenWidth,
@@ -49,24 +49,11 @@ class GetStartedScreen extends StatelessWidget {
                   const SizedBox(
                     height: 45.0,
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      height: screenHeight / 13,
-                      width: screenWidth / 1.2,
-                      decoration: BoxDecoration(
-                          color: AppColors.primary,
-                          borderRadius: BorderRadius.circular(15)),
-                      child: const Center(
-                        child: Text(
-                          "Login",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    ),
+                  customButton(
+                    context,
+                    onTap:(){},
+                    color: AppColors.primary,
+                    label: "Login",
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -84,7 +71,6 @@ class GetStartedScreen extends StatelessWidget {
                         child: const Text(
                           "Sign Up",
                           style: TextStyle(
-
                             color: AppColors.primary,
                             fontSize: 16,
                             //fontWeight: FontWeight.bold
