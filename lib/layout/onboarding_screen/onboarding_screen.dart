@@ -5,6 +5,7 @@ import 'package:tab_cash/core/styles/colors.dart';
 import 'package:tab_cash/layout/onboarding_screen/widget/page_view_widget.dart';
 import 'package:tab_cash/layout/success_screen.dart';
 
+import '../../config/routes/routes.dart';
 import 'onboard_model.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -37,10 +38,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     OnboardingModel(image: AppImages.trans2Svg,
         title: 'Maps',
         description: 'Send money to anyone ,typically fast and secure, with transaction history stored in the app.'),
-    OnboardingModel(image: AppImages.transMoneySvg,
+    OnboardingModel(image: AppImages.trans2Svg,
         title: 'Smart Card',
         description: "A physical card linked to the user's e-wallet account that can be used to make payments at merchants."),
-    OnboardingModel(image: AppImages.transMoneySvg,
+    OnboardingModel(image: AppImages.trans2Svg,
         title: 'Parental Controls',
         description: "Allows parents to set a spending limit on their child's e-wallet account, view transaction history."),
 
@@ -58,7 +59,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               // nav to login screen
 
               Navigator.
-              push(context, MaterialPageRoute(builder: (context) => const SuccessScreen(),));
+              pushNamed(context, Routes.successScreen);
 
             } else {
               _controller.nextPage(duration: const Duration(milliseconds: 800),
@@ -69,31 +70,53 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: const Icon(
             Icons.arrow_forward, color: Colors.white, size: 32,),
         ),
-        body: Stack(
+        body: Column(
           children: [
-            PageView.builder(
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) =>
-                  PageViewWidget(onboardingData: listOnboardData[index],
-                      controller: _controller),
-              scrollDirection: Axis.horizontal,
-              onPageChanged: (int i) {
-                if (i == listOnboardData.length - 1) {
-                  setState(() {
-                    isLast = true;
-                  });
-                } else {
-                  setState(() {
-                    isLast = false;
-                  });
-                }
-              },
-              controller: _controller,
+
+            InkWell
+              (onTap: (){
+                Navigator.pushNamed(context, Routes.successScreen);
+            },
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text('Skip',style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.primary
+                    ),),
+                  ),
+                )),
+
+            Expanded(
+              child: PageView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) =>
+                    PageViewWidget(onboardingData: listOnboardData[index],
+                        ),
+
+                scrollDirection: Axis.horizontal,
+                onPageChanged: (int i) {
+                  if ( i == listOnboardData.length-1) {
+                    setState(() {
+                      isLast = true;
+                    });
+                  } else {
+                    setState(() {
+                      isLast = false;
+                    });
+                  }
+                },
+                controller: _controller,
+                itemCount: listOnboardData.length,
+              ),
             ),
 
-            Positioned(
-              bottom: 0,
-              left: 0,
+            // smooth Page Indicator
+
+            Align(
+              alignment: Alignment.bottomLeft,
               child: Padding(
                 padding: const EdgeInsets.only(left: 24.0,bottom: 32.0),
                 child: SmoothPageIndicator(
@@ -103,7 +126,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
