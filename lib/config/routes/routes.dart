@@ -12,7 +12,6 @@ class Routes{
   static const String successScreen = '/successScreen';
   static const String loginScreen = '/loginScreen';
   static const String registerScreen = '/registerScreen';
-  static const String verificationScreen = '/verificationScreen';
 }
 
 class AppRoutes{
