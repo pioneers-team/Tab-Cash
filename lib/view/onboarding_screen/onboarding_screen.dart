@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/core/styles/colors.dart';
-import 'package:tab_cash/layout/onboarding_screen/widget/page_view_widget.dart';
-import 'package:tab_cash/layout/success_screen.dart';
+import 'package:tab_cash/view/onboarding_screen/widget/page_view_widget.dart';
 
 import '../../config/routes/routes.dart';
 import 'onboard_model.dart';
@@ -59,7 +58,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               // nav to login screen
 
               Navigator.
-              pushNamed(context, Routes.successScreen);
+              pushNamed(context, Routes.loginScreen);
 
             } else {
               _controller.nextPage(duration: const Duration(milliseconds: 800),
@@ -75,7 +74,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
             InkWell
               (onTap: (){
-                Navigator.pushNamed(context, Routes.successScreen);
+                Navigator.pushNamed(context, Routes.loginScreen);
             },
                 child: Align(
                   alignment: Alignment.topRight,

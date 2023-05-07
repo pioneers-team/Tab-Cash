@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tab_cash/core/components/custom_TextField.dart';
 
+import '../../config/routes/routes.dart';
 import '../../core/components/custom_button.dart';
 import '../../core/styles/colors.dart';
 
@@ -157,7 +158,9 @@ class RegisterScreen extends StatelessWidget {
                             )
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, Routes.loginScreen);
+                            },
                             child:  Text(
                               "Login",
                               style: Theme.of(context).textTheme.displayMedium!.copyWith(

@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:tab_cash/core/styles/colors.dart';
+import 'dart:developer';
 
+import 'package:flutter/material.dart';
+import 'package:tab_cash/core/styles/colors.dart';
+import '../../config/routes/routes.dart';
 import '../../core/components/custom_TextField.dart';
 import '../../core/components/custom_button.dart';
 
@@ -109,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                         context,
                         onTap:(){
                           if(formKey.currentState!.validate()){
-                            print("*****SUCCESS****");
+                            log("*****SUCCESS****");
                           }
                         },
                         color: AppColors.secondColor,
@@ -129,7 +130,9 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, Routes.registerScreen);
+                            },
                             child:  Text(
                               "Sign Up",
                               style: Theme.of(context).textTheme.displayMedium!.copyWith(

@@ -1,10 +1,7 @@
 import 'dart:async';
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/core/styles/colors.dart';
-import 'package:tab_cash/layout/onboarding_screen/onboarding_screen.dart';
 
 import '../../config/routes/routes.dart';
 import 'custom_clip_path.dart';
@@ -35,9 +32,6 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
   @override
   Widget build(BuildContext context) {
-    double heightDevice = MediaQuery.of(context).size.height;
-    double widthDevice = MediaQuery.of(context).size.width;
-
     return SafeArea(
       child:  Scaffold(
         backgroundColor: AppColors.secondColor,

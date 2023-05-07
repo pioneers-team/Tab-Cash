@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:tab_cash/layout/onboarding_screen/onboarding_screen.dart';
-import 'package:tab_cash/layout/success_screen.dart';
+import 'package:tab_cash/view/success_screen/success_screen.dart';
 import 'package:tab_cash/view/auth/login_screen.dart';
 import 'package:tab_cash/view/auth/register_screen.dart';
 
+import '../../view/onboarding_screen/onboarding_screen.dart';
 import '../../view/splash_screen/splash_screen.dart';
 class Routes{
   static const String splashScreen='/';
