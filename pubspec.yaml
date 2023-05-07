@@ -16,22 +16,13 @@ dependencies:
   flutter_svg: ^2.0.5
   smooth_page_indicator: ^1.1.0
   google_fonts: ^4.0.4
-  flutter_bloc: ^8.1.2
-  dio: ^5.1.1
+  otp_text_field: ^1.1.3
 
 
 dev_dependencies:
-  flutter_native_splash: ^2.2.19
   flutter_test:
     sdk: flutter
 
-flutter_native_splash:
-  color_dark: "#0000008A"
-  color: "#424242FF"
-  image_dark: "assets/images/logo_tab_cash.png"
-  image: "assets/images/logo_tab_cash.png"
-  fill: true
-  android_gravity: center
 
   flutter_lints: ^2.0.0
 

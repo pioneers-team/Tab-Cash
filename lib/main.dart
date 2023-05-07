@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tab_cash/config/routes/routes.dart';
-import 'core/share/bloc_observer.dart';
+import 'package:tab_cash/view/auth/login_screen.dart';
+import 'package:tab_cash/view/auth/register_screen.dart';
+import 'package:tab_cash/view/verification/verification_screen.dart';
+import 'layout/splash_screen/splash_screen.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  Bloc.observer = MyBlocObserver();
-  // DioHelper.init();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-      .then((value) => runApp(const MyApp()));
-
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,14 +18,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tab Cash',
       theme: ThemeData(
-        cardTheme: const CardTheme(),
+        primarySwatch: Colors.orange,
+        cardTheme: CardTheme(),
         scaffoldBackgroundColor: const Color(0xFFF5F5F5),
         textTheme: TextTheme(
+
           displayMedium: GoogleFonts.poppins(),
         )
       ),
-      onGenerateRoute: AppRoutes.onGenerateRoute,
-      //home: SplashScreen(),
+      home:  RegisterScreen(),
     );
   }
 }
