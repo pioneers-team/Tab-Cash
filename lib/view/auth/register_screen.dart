@@ -159,7 +159,7 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, Routes.loginScreen);
+                              Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreen, (route) => false);
                             },
                             child:  Text(
                               "Login",

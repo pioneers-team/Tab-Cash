@@ -57,8 +57,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             if (isLast) {
               // nav to login screen
 
-              Navigator.
-              pushNamed(context, Routes.loginScreen);
+              Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreen, (route) => false);
+
 
             } else {
               _controller.nextPage(duration: const Duration(milliseconds: 800),
@@ -74,7 +74,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
             InkWell
               (onTap: (){
-                Navigator.pushNamed(context, Routes.loginScreen);
+                Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreen, (route) => false);
             },
                 child: Align(
                   alignment: Alignment.topRight,
@@ -119,9 +119,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 24.0,bottom: 32.0),
                 child: SmoothPageIndicator(
-                  controller: _controller, count: listOnboardData.length,
+                  controller: _controller,
+                  count: listOnboardData.length,
                   effect: const ScrollingDotsEffect(
-                      activeDotColor: AppColors.primary
+                      activeDotColor: AppColors.primary,
+                    dotHeight: 13.0,
+                    dotWidth: 13.0
                   ),
                 ),
               ),
