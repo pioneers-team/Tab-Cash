@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:otp_text_field/style.dart';
 import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/core/styles/colors.dart';
-import 'package:otp_text_field/otp_text_field.dart';
 import 'package:tab_cash/view/verification/widgets/custom_otp.dart';
 
 import '../../core/components/custom_button.dart';
-
-Color accentPurpleColor = Color(0xFF6A53A1);
-Color primaryColor = Color(0xFF121212);
-Color accentPinkColor = Color(0xFFF99BBD);
-Color accentDarkGreenColor = Color(0xFF115C49);
-Color accentYellowColor = Color(0xFFFFB612);
-Color accentOrangeColor = Color(0xFFEA7A3B);
-
-
 
 class VerificationScreen extends StatefulWidget {
   const VerificationScreen({Key? key}) : super(key: key);
