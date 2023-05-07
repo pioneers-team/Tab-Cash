@@ -19,9 +19,17 @@ dependencies:
 
 
 dev_dependencies:
+  flutter_native_splash: ^2.2.19
   flutter_test:
     sdk: flutter
 
+flutter_native_splash:
+  color_dark: "#0000008A"
+  color: "#424242FF"
+  image_dark: "assets/images/logo_tab_cash.png"
+  image: "assets/images/logo_tab_cash.png"
+  fill: true
+  android_gravity: center
 
   flutter_lints: ^2.0.0
 
