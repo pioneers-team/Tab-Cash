@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:tab_cash/view/success_screen/success_screen.dart';
 import 'package:tab_cash/view/auth/login_screen.dart';
 import 'package:tab_cash/view/auth/register_screen.dart';
+import 'package:tab_cash/view/withdraw/add_money_screen.dart';
+import 'package:tab_cash/view/withdraw/transfer_screen.dart';
+import 'package:tab_cash/view/withdraw/withdraw_screen.dart';
 
 import '../../view/onboarding_screen/onboarding_screen.dart';
 import '../../view/splash_screen/splash_screen.dart';
@@ -12,6 +15,10 @@ class Routes{
   static const String successScreen = '/successScreen';
   static const String loginScreen = '/loginScreen';
   static const String registerScreen = '/registerScreen';
+  static const String transferScreen = '/transferScreen';
+  static const String addMoneyScreen = '/addMoneyScreen';
+  static const String withdrawScreen = '/WithdrawScreen';
+
 }
 
 class AppRoutes{
@@ -32,6 +39,16 @@ class AppRoutes{
       case Routes.registerScreen:
         return MaterialPageRoute(builder: (context)=>RegisterScreen(),
             settings: routeSettings);
+      case Routes.transferScreen:
+        return MaterialPageRoute(builder: (context)=>TransferScreen(),
+            settings: routeSettings);
+      case Routes.addMoneyScreen:
+        return MaterialPageRoute(builder: (context)=>AddMoneyScreen(),
+            settings: routeSettings);
+      case Routes.withdrawScreen:
+        return MaterialPageRoute(builder: (context)=>WithdrawScreen(),
+            settings: routeSettings);
+
 
 
       default:
