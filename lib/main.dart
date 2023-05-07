@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tab_cash/config/routes/routes.dart';
-import 'package:tab_cash/view/splash_screen/splash_screen.dart';
-
 import 'core/share/bloc_observer.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
-  runApp(const MyApp());
+  // DioHelper.init();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(const MyApp()));
+
 }
 
 class MyApp extends StatelessWidget {
