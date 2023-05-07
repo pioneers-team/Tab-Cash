@@ -9,7 +9,6 @@ class PageViewWidget extends StatelessWidget {
   const PageViewWidget({
     super.key,
     required this.onboardingData,
-    required PageController controller,
   }) ;
 
   final OnboardingModel onboardingData;
