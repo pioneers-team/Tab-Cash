@@ -20,10 +20,12 @@ Widget customButton(context,{
       child:  Center(
         child: Text(
           label,
-          style: const TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
-              fontWeight: FontWeight.w700),
+          style: Theme.of(context).textTheme.displayMedium!.copyWith(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.w600
+
+          )
         ),
       ),
     ),
