@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Tab Cash',
       theme: ThemeData(
         cardTheme: const CardTheme(),
+        primarySwatch: Colors.orange,
         scaffoldBackgroundColor: const Color(0xFFF5F5F5),
         textTheme: TextTheme(
           displayMedium: GoogleFonts.poppins(),
