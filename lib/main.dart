@@ -3,6 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tab_cash/config/routes/routes.dart';
+import 'package:tab_cash/view/withdraw/add_money_screen.dart';
+import 'package:tab_cash/view/withdraw/transfer_screen.dart';
+import 'package:tab_cash/view/withdraw/withdraw_screen.dart';
 
 import 'core/share/bloc_observer.dart';
 
@@ -25,14 +28,20 @@ class MyApp extends StatelessWidget {
       title: 'Tab Cash',
       theme: ThemeData(
         primarySwatch: Colors.orange,
+        appBarTheme: const AppBarTheme(
+          elevation: 0.0,
+          backgroundColor: Colors.transparent
+        ),
         cardTheme: CardTheme(),
-        scaffoldBackgroundColor: const Color(0xFFF5F5F5),
+        scaffoldBackgroundColor:  Color(0xFFFFFFFF),
         textTheme: TextTheme(
 
           displayMedium: GoogleFonts.poppins(),
         )
       ),
       onGenerateRoute: AppRoutes.onGenerateRoute,
+     // home: WithdrawScreen(),
+
     );
   }
 }
