@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:iconly/iconly.dart';
 import 'package:meta/meta.dart';
 
 import '../../view/cards/cards_screen.dart';
@@ -37,15 +38,15 @@ class LayoutCubit extends Cubit<LayoutStates> {
 
   List<BottomNavigationBarItem> bottomNavItems = [
     const BottomNavigationBarItem(
-      icon: Icon(Icons.home_outlined),
+      icon: Icon(IconlyLight.home),
       label: "Home",
     ),
     const BottomNavigationBarItem(
-      icon: Icon(Icons.wallet),
+      icon: Icon(IconlyLight.wallet),
       label: "Cards",
     ),
     const BottomNavigationBarItem(
-      icon: Icon(Icons.perm_identity_rounded),
+      icon: Icon(IconlyLight.profile),
       label: "Profile",
     ),
 
