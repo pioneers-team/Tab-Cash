@@ -9,6 +9,8 @@ import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 import 'package:tab_cash/core/utils/media_quary.dart';
 
+import '../../core/components/custom_text_field_money.dart';
+
 
 class CardsScreen extends StatefulWidget {
    CardsScreen({Key? key}) : super(key: key);
@@ -66,7 +68,7 @@ class _CardsScreenState extends State<CardsScreen> {
                       ),
                       const Padding(
                         padding: EdgeInsets.only(left: 48.0,top: 12.0),
-                        child: Text('Name Surname',style: TextStyle(
+                        child: Text('Expired after 24',style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,fontSize: 16.0
                         ),),
@@ -84,32 +86,13 @@ class _CardsScreenState extends State<CardsScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 32.0,vertical: 8.0),
                   child:Form(
                     key: formKey,
-                    child: TextFormField(
-                      textAlign: TextAlign.center,
-                      validator: (String? value) {
-                        if(value!.isEmpty){
-                          return "Please Enter Your money value";
-                        }else if(value.length > 5 || value.length < 2){
-                          return "Your money is not enough";
-                        }
-                      },
-
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-
-                        focusedBorder:OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(16.0),
-                              borderSide: const BorderSide(color: Color(0xFFB2AFAF))
-                          ) ,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(16.0),
-                              borderSide: const BorderSide(color: Color(0xFFB2AFAF))
-                          ),hintText: '00000',
-                        hintStyle: const TextStyle(
-                            color: Color(0xFF808080)
-                        ),
-                      ),
-                    ),
+                    child: CustomTextFieldMoney(hintText: '000',validator: (String? value) {
+                      if(value!.isEmpty){
+                        return "Please Enter Your money value";
+                      }else if(value.length > 5 || value.length < 2){
+                        return "Your money is not enough";
+                      }
+                    },),
                   ),
                 ),
                 SizedBox(height: context.height*0.09,),
@@ -138,7 +121,7 @@ class _CardsScreenState extends State<CardsScreen> {
         width: double.infinity,
         decoration:  BoxDecoration(
           borderRadius: BorderRadius.circular(16.0),
-            image: DecorationImage(
+            image: const DecorationImage(
                 image: AssetImage('assets/images/Mask group.png')
             ),
         ),
@@ -181,3 +164,4 @@ class _CardsScreenState extends State<CardsScreen> {
     ) ,);
   }
 }
+
