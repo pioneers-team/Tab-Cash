@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 
+import '../../../config/routes/routes.dart';
+
 class MainFeature extends StatelessWidget {
   const MainFeature({Key? key}) : super(key: key);
 
@@ -14,6 +16,7 @@ class MainFeature extends StatelessWidget {
         children: [
           featureWidget(
             context,
+            navRoutes: '',
             backgroundColor: AppColors.primary,
             title: "Transfer",
             child: const Icon(
@@ -26,6 +29,7 @@ class MainFeature extends StatelessWidget {
             context,
             backgroundColor: AppColors.white,
             title: "Withdraw",
+            navRoutes: Routes.withdrawScreen,
             child: const Icon(
               IconlyLight.download,
               size: 35,
@@ -33,6 +37,7 @@ class MainFeature extends StatelessWidget {
           ),
           featureWidget(
             context,
+            navRoutes: '',
             backgroundColor: AppColors.white,
             title: "Pay bills",
             child: const Icon(
@@ -47,7 +52,7 @@ class MainFeature extends StatelessWidget {
             child: const Icon(
               Icons.child_care_outlined,
               size: 45,
-            ),
+            ), navRoutes: '',
           ),
         ],
       ),
@@ -60,19 +65,25 @@ Widget featureWidget(
   Color backgroundColor = Colors.white,
   required Widget child,
   required String title,
+    required  String navRoutes
 }) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      Container(
-        height: 66,
-        width: 66,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: AppColors.primaryColorGray, width: 1),
-          color: backgroundColor,
+      GestureDetector(
+        onTap:(){
+    Navigator.pushNamed(context, navRoutes);
+  },
+        child: Container(
+          height: 66,
+          width: 66,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50),
+            border: Border.all(color: AppColors.primaryColorGray, width: 1),
+            color: backgroundColor,
+          ),
+          child: child,
         ),
-        child: child,
       ),
       const SizedBox(
         height: 10,
