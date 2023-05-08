@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../core/styles/colors.dart';
 import '../../view_model/layout_cubit/layout_cubit.dart';
+import '../drawer/my_drawer.dart';
 
 
 class LayoutScreen extends StatelessWidget {
@@ -28,10 +30,10 @@ class LayoutScreen extends StatelessWidget {
                 color: AppColors.secondColor
               ),
             ),
-            actions: [
+            actions: const[
               Padding(
-                padding: const EdgeInsets.only(right: 15.0),
-                child: Icon(Icons.notifications_none_rounded),
+                padding:  EdgeInsets.only(right: 15.0),
+                child: Icon(IconlyLight.notification),
               ),
             ],
           ),
@@ -48,7 +50,7 @@ class LayoutScreen extends StatelessWidget {
             iconSize: 30,
             items: cubit.bottomNavItems,
           ),
-          drawer: Drawer(),
+          drawer: const DrawerWidget(),
         );
       },
     );
