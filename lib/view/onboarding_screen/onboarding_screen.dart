@@ -57,12 +57,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             if (isLast) {
               // nav to login screen
 
-              Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreen, (route) => false);
-
+      Navigator.pushReplacementNamed(context, Routes.loginScreen);
 
             } else {
-              _controller.nextPage(duration: const Duration(milliseconds: 800),
-                  curve: Curves.easeIn);
+              _controller.nextPage(duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut);
             }
 
           },

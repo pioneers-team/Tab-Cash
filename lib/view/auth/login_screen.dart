@@ -8,14 +8,14 @@ import '../../core/components/custom_button.dart';
 
 class LoginScreen extends StatelessWidget {
 
-  const LoginScreen({Key? key}) : super(key: key);
+   LoginScreen({Key? key}) : super(key: key);
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
     return GestureDetector(
         onTap: () {
-      FocusManager.instance.primaryFocus?.unfocus();
+     // FocusManager.instance.primaryFocus?.unfocus();
     },
       child: Scaffold(
         appBar: AppBar(

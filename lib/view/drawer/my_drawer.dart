@@ -49,7 +49,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             const DrawerItem(
               label: 'Home',
               iconData: IconlyLight.home,
-              screenName: Routes.homeScreen,
+              screenName: Routes.layoutScreen,
             ),
             const DrawerItem(
               label: 'Dashboard',

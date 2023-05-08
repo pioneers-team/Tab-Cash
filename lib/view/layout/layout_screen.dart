@@ -19,38 +19,40 @@ class LayoutScreen extends StatelessWidget {
         // TODO: implement listener
       },
       builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(
-            backgroundColor: AppColors.transparent,
-            elevation: 0.0,
-            title: Text(
-                cubit.appBarTitle[cubit.currentIndex],
-              style:  Theme.of(context).textTheme.displayMedium!.copyWith(
-                fontSize: 25.0,
-                color: AppColors.secondColor
+        return SafeArea(
+          child: Scaffold(
+            appBar: AppBar(
+              backgroundColor: AppColors.transparent,
+              elevation: 0.0,
+              title: Text(
+                  cubit.appBarTitle[cubit.currentIndex],
+                style:  Theme.of(context).textTheme.displayMedium!.copyWith(
+                  fontSize: 25.0,
+                  color: AppColors.secondColor
+                ),
               ),
+              actions: const[
+                Padding(
+                  padding:  EdgeInsets.only(right: 15.0),
+                  child: Icon(IconlyLight.notification),
+                ),
+              ],
             ),
-            actions: const[
-              Padding(
-                padding:  EdgeInsets.only(right: 15.0),
-                child: Icon(IconlyLight.notification),
-              ),
-            ],
+            body: cubit.screens[cubit.currentIndex],
+            bottomNavigationBar: BottomNavigationBar(
+              elevation: 2,
+              currentIndex: cubit.currentIndex,
+              unselectedItemColor: AppColors.primaryColorGray,
+              selectedItemColor: AppColors.primary,
+              onTap: (index) {
+                cubit.changeBottomNavBar(index);
+              },
+              type: BottomNavigationBarType.fixed,
+              iconSize: 30,
+              items: cubit.bottomNavItems,
+            ),
+            drawer: const DrawerWidget(),
           ),
-          body: cubit.screens[cubit.currentIndex],
-          bottomNavigationBar: BottomNavigationBar(
-            elevation: 2,
-            currentIndex: cubit.currentIndex,
-            unselectedItemColor: AppColors.primaryColorGray,
-            selectedItemColor: AppColors.primary,
-            onTap: (index) {
-              cubit.changeBottomNavBar(index);
-            },
-            type: BottomNavigationBarType.fixed,
-            iconSize: 30,
-            items: cubit.bottomNavItems,
-          ),
-          drawer: const DrawerWidget(),
         );
       },
     );
