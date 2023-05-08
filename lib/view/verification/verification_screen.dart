@@ -4,6 +4,7 @@ import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 import 'package:tab_cash/view/verification/widgets/custom_otp.dart';
 
+import '../../config/routes/routes.dart';
 import '../../core/components/custom_button.dart';
 
 class VerificationScreen extends StatefulWidget {
@@ -76,7 +77,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       padding: const EdgeInsets.only(right: 15.0,left: 15,top: 15,bottom: 20.0),
                       child: customButton(
                         context,
-                        onTap:(){},
+                        onTap:(){
+                          Navigator.pushReplacementNamed(context, Routes.successScreen);
+                        },
                         color: AppColors.secondColor,
                         label: "Continue",
                       ),

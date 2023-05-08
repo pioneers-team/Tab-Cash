@@ -8,14 +8,19 @@ import 'package:tab_cash/view/withdraw/add_money_screen.dart';
 import 'package:tab_cash/view/withdraw/transfer_screen.dart';
 import 'package:tab_cash/view/withdraw/withdraw_screen.dart';
 
+import '../../view/layout/layout_screen.dart';
 import '../../view/onboarding_screen/onboarding_screen.dart';
 import '../../view/splash_screen/splash_screen.dart';
+import '../../view/verification/verification_screen.dart';
 class Routes{
   static const String splashScreen='/';
   static  const String onboardingScreen = '/onboardingScreen';
   static const String successScreen = '/successScreen';
   static const String homeScreen = '/homeScreen';
+  static const String verificationScreen = '/verificationScreen';
+
   static const String loginScreen = '/loginScreen';
+  static const String layoutScreen = '/layoutScreen';
   static const String registerScreen = '/registerScreen';
   static const String transferScreen = '/transferScreen';
   static const String addMoneyScreen = '/addMoneyScreen';
@@ -52,6 +57,12 @@ class AppRoutes{
             settings: routeSettings);
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (context)=>HomeScreen(),
+            settings: routeSettings);
+      case Routes.verificationScreen:
+        return MaterialPageRoute(builder: (context)=>VerificationScreen(),
+            settings: routeSettings);
+      case Routes.layoutScreen:
+        return MaterialPageRoute(builder: (context)=>LayoutScreen(),
             settings: routeSettings);
 
 
