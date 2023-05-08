@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
                 elevation: 0.0,
                 backgroundColor: Colors.transparent
             ),
-            cardTheme: CardTheme(),
+            cardTheme: const CardTheme(),
             scaffoldBackgroundColor: const Color(0xFFFFFFFF),
             textTheme: TextTheme(
 
@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
             )
         ),
        onGenerateRoute: AppRoutes.onGenerateRoute,
-
       ),
     );
   }

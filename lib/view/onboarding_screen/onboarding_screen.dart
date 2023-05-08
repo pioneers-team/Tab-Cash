@@ -73,8 +73,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
             InkWell
               (onTap: (){
-                Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreen, (route) => false);
-            },
+Navigator.pushReplacementNamed(context, Routes.loginScreen)     ;       },
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Padding(
