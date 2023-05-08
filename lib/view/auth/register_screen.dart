@@ -137,6 +137,7 @@ class RegisterScreen extends StatelessWidget {
                         onTap:(){
                           if(formKey.currentState!.validate()){
                             print("*****SUCCESS****");
+                            Navigator.pushReplacementNamed(context, Routes.verificationScreen);
                           }
                         },
                         color: AppColors.secondColor,

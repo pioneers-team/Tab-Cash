@@ -5,9 +5,21 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 
-class SuccessScreen extends StatelessWidget {
+import '../../config/routes/routes.dart';
+
+class SuccessScreen extends StatefulWidget {
   const SuccessScreen({Key? key}) : super(key: key);
 
+  @override
+  State<SuccessScreen> createState() => _SuccessScreenState();
+}
+
+class _SuccessScreenState extends State<SuccessScreen> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 2),() => Navigator.pushReplacementNamed(context, Routes.layoutScreen),);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(

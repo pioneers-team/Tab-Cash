@@ -111,6 +111,7 @@ class LoginScreen extends StatelessWidget {
                         onTap:(){
                           if(formKey.currentState!.validate()){
                             log("*****SUCCESS****");
+                            Navigator.pushReplacementNamed(context, Routes.layoutScreen);
                           }
                         },
                         color: AppColors.secondColor,
