@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       onGenerateRoute: AppRoutes.onGenerateRoute,
-
+      home: CardsScreen(),
 
     );
   }

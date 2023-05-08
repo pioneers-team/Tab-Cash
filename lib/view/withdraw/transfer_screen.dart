@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/components/custom_button.dart';
+import '../../core/components/custom_text_field.dart';
 import '../../core/constants/app_images.dart';
 import '../../core/styles/colors.dart';
 
@@ -47,23 +48,7 @@ class TransferScreen extends StatelessWidget {
                       fontSize: 16.0
                   ),),
                   const SizedBox(height: 16.0,),
-                  TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                        hintText: '                          00,000,00 ',
-                        hintStyle: const TextStyle(
-                            color: Color(0xFF808080)
-                        ),
-                        focusedBorder:OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16.0),
-                            borderSide: const BorderSide(color: Color(0xFFB2AFAF))
-                        ) ,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16.0),
-                            borderSide: const BorderSide(color: Color(0xFFB2AFAF))
-                        )
-                    ),
-                  ),
+                  const customTextField(),
                   const SizedBox(height: 16.0,),
                   Text(' Enter password',style: GoogleFonts.poppins(
                       color: Colors.black,
@@ -105,7 +90,7 @@ class TransferScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       content: Container(
 
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
