@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/view/drawer/widgets/drawer_item.dart';
+import 'package:tab_cash/view/home/home_screen.dart';
+
+import '../../config/routes/routes.dart';
 
 class DrawerWidget extends StatefulWidget {
   const DrawerWidget({Key? key}) : super(key: key);
@@ -14,47 +18,73 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Material(
-        color: Theme.of(context).scaffoldBackgroundColor,
+        color: Colors.white,
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
+              decoration: const BoxDecoration(
+                color: Colors.white,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+               crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Flexible(child: Image.asset(AppImages.logo,height: 60,width: 60.0,)),
-                  const SizedBox(height:16.0,),
+                  const CircleAvatar(
+                    radius: 28.0,
+                    backgroundColor: Colors.grey,
+                  ),
+                  const SizedBox(height:12.0,),
                   Flexible(
-                    child:  Text('News App',
-                      style: GoogleFonts.lobster(
-                          fontSize: 20.0,
-                          letterSpacing: 0.6
+                    child:  Text('Ahmed Saide',
+                      style: GoogleFonts.poppins(
+                        color: Colors.black
                       ),),
                   ),
                 ],
               ),
             ),
-            DrawerItem(
+            const Divider(thickness: 1,),
+            const DrawerItem(
               label: 'Home',
-              iconData: Icons.home,
-              function: (){
-
-              },
+              iconData: IconlyLight.home,
+              screenName: Routes.homeScreen,
             ),
-            DrawerItem(
-              label: 'Bookmark',
-              iconData: Icons.bookmark,
-              function: (){
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context)=>BookMarkScreen()));
-
-              },
+            const DrawerItem(
+              label: 'Dashboard',
+              iconData: IconlyLight.category,
+              screenName: '',
             ),
-            const Divider(thickness: 2,),
+            const DrawerItem(
+              label: 'Tracking',
+              iconData: Icons.stacked_bar_chart_outlined,
+
+            ),
+            const DrawerItem(
+              label: 'Favorites',
+              iconData: Icons.favorite_border_outlined,
+
+            ),
+            const DrawerItem(
+              label: 'Languages',
+              iconData: Icons.language,
+            ),
+            const DrawerItem(
+              label: 'Contact Us',
+              iconData: IconlyLight.message,
+
+            ),
+            const DrawerItem(
+              label: 'Settings',
+              iconData: IconlyLight.setting,
+
+            ),
+            const DrawerItem(
+              label: 'Log out',
+              iconData: IconlyLight.logout,
+
+            ),
 
 
           ],

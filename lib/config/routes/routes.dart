@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:tab_cash/view/home/home_screen.dart';
 import 'package:tab_cash/view/success_screen/success_screen.dart';
 import 'package:tab_cash/view/auth/login_screen.dart';
 import 'package:tab_cash/view/auth/register_screen.dart';
@@ -13,6 +14,7 @@ class Routes{
   static const String splashScreen='/';
   static  const String onboardingScreen = '/onboardingScreen';
   static const String successScreen = '/successScreen';
+  static const String homeScreen = '/homeScreen';
   static const String loginScreen = '/loginScreen';
   static const String registerScreen = '/registerScreen';
   static const String transferScreen = '/transferScreen';
@@ -47,6 +49,9 @@ class AppRoutes{
             settings: routeSettings);
       case Routes.withdrawScreen:
         return MaterialPageRoute(builder: (context)=>WithdrawScreen(),
+            settings: routeSettings);
+      case Routes.homeScreen:
+        return MaterialPageRoute(builder: (context)=>HomeScreen(),
             settings: routeSettings);
 
 

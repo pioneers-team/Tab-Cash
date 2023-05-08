@@ -9,7 +9,6 @@ class CardsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(),
-      drawer: DrawerWidget(),
       body: Center(
         child: Text(
           "Cards Screen",

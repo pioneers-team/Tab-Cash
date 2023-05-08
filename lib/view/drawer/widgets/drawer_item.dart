@@ -6,24 +6,23 @@ class DrawerItem extends StatelessWidget {
   const DrawerItem({
     super.key,
     required this.iconData,
-    required this.function,
+     this.screenName,
     required this.label
   });
 
   final String label;
   final IconData iconData;
-  final Function function;
+  final String? screenName ;
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading:  Icon(
         iconData,
-        color:Theme.of(context).colorScheme.secondary,
-
+        color: const Color(0xFF0E0E0C),
       ),
-      title:  Text(label,style: const TextStyle(fontSize: 20.0),),
+      title:  Text(label,style: const TextStyle(fontSize: 16.0),),
       onTap: () {
-        function();
+        Navigator.pushReplacementNamed(context, screenName!);
       },
     );
   }
