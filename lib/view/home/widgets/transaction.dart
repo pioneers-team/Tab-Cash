@@ -23,12 +23,12 @@ class CustomTransaction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //color: AppColors.primary,
+
       child: Row(
         children: [
           Container(
-            height: 66,
-            width: 66,
+            height: 60,
+            width: 60,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               border: Border.all(color: AppColors.primaryColorGray, width: 1),
@@ -37,7 +37,7 @@ class CustomTransaction extends StatelessWidget {
             child: Icon(
               iconData,
               color: iconColor,
-              size: 40,
+              size: 35,
             ),
           ),
           SizedBox(
@@ -50,7 +50,7 @@ class CustomTransaction extends StatelessWidget {
               Text(
                 transactionTitle,
                 style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                      fontSize: 19,
+                      fontSize: 17,
                       color: AppColors.secondColor,
                       fontWeight: FontWeight.bold,
                     ),
@@ -78,7 +78,7 @@ class CustomTransaction extends StatelessWidget {
           Text(
             "EGP $transactionAmount",
             style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                  fontSize: 22.0,
+                  fontSize: 20.0,
                   color: AppColors.secondColor,
                 ),
           ),
