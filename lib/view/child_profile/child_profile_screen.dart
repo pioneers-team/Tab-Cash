@@ -83,17 +83,6 @@ class ChildProfileScreen extends StatelessWidget {
                       height: 12,
                     ),
                     CustomTransaction(
-                      transactionTitle: "GTA IV Game",
-                      transactionAmount: "300",
-                      transactionDate: "May 25,2022 ",
-                      transactionTime: "10:00 pm",
-                      iconData: IconlyLight.arrow_down,
-                      iconColor: Colors.red,
-                    ),
-                    SizedBox(
-                      height: 12,
-                    ),
-                    CustomTransaction(
                       transactionTitle: " Football online",
                       transactionAmount: "300",
                       transactionDate: "May 25,2022 ",
