@@ -17,4 +17,5 @@ class AppImages{
   static const String alert = '$baseImage/mail 1.png';
   static const String alertTransfer = '$baseImage/transferAlert.png';
   static const String smartCard = '$baseImage/alert_smart_card.png';
+
 }

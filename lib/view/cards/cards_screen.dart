@@ -137,7 +137,7 @@ class _CardsScreenState extends State<CardsScreen> {
                 Align(
                 alignment: Alignment.topLeft
                 ,
-                    child: Image.asset('assets/images/smart_card_vector.png')),
+                    child: Image.asset(AppImages.smartCard)),
                 const Spacer(),
                 Image.asset(AppImages.logo,height: 16.0,)
               ],
