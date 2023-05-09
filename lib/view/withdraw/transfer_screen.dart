@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:tab_cash/core/utils/media_quary.dart';
 import '../../core/components/custom_button.dart';
 import '../../core/components/custom_text_field_money.dart';
@@ -28,11 +29,12 @@ class TransferScreen extends StatelessWidget {
           },
           icon: const Icon(Icons.arrow_back_ios,),
         ),
-        actions:  [IconButton(
-            onPressed: (){
-
-            },
-            icon:const Icon( Icons.notifications_none_outlined,size: 25.0))],
+        actions: const[
+          Padding(
+            padding:  EdgeInsets.only(right: 15.0),
+            child: Icon(IconlyLight.notification),
+          ),
+        ],
       ),
       body: GestureDetector(
         onTap: (){

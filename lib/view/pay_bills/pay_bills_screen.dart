@@ -47,6 +47,12 @@ class PayBillsScreen extends StatelessWidget {
             IconlyLight.arrow_left_2,
           ),
         ),
+        actions: const[
+          Padding(
+            padding:  EdgeInsets.only(right: 15.0),
+            child: Icon(IconlyLight.notification),
+          ),
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
