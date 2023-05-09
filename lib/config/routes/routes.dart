@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tab_cash/view/child_profile/child_profile_screen.dart';
 import 'package:tab_cash/view/dashboard/dashboard_screen.dart';
 import 'package:tab_cash/view/home/home_screen.dart';
+import 'package:tab_cash/view/pay_bills/pay_bills_screen.dart';
 import 'package:tab_cash/view/success_screen/success_screen.dart';
 import 'package:tab_cash/view/auth/login_screen.dart';
 import 'package:tab_cash/view/auth/register_screen.dart';
@@ -29,6 +30,7 @@ class Routes{
   static const String withdrawScreen = '/WithdrawScreen';
   static const String dashboardScreen = '/dashboardScreen';
   static const String childProfileScreen = '/childProfileScreen';
+  static const String payBillsScreen = '/payBillsScreen';
 
 }
 
@@ -75,7 +77,9 @@ class AppRoutes{
       case Routes.childProfileScreen:
         return MaterialPageRoute(builder: (context)=>ChildProfileScreen(),
             settings: routeSettings);
-
+      case Routes.payBillsScreen:
+        return MaterialPageRoute(builder: (context)=>PayBillsScreen(),
+            settings: routeSettings);
 
 
       default:

@@ -40,7 +40,6 @@ class MyApp extends StatelessWidget {
             cardTheme: const CardTheme(),
             scaffoldBackgroundColor: const Color(0xFFFFFFFF),
             textTheme: TextTheme(
-
               displayMedium: GoogleFonts.poppins(),
             )
         ),

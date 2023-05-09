@@ -36,7 +36,7 @@ class MainFeature extends StatelessWidget {
           ),
           featureWidget(
             context,
-            navRoutes: '',
+            navRoutes: Routes.payBillsScreen,
             backgroundColor: AppColors.white,
             title: "Pay bills",
             child: const Icon(
@@ -49,7 +49,7 @@ class MainFeature extends StatelessWidget {
             title: "Kids",
             backgroundColor: AppColors.white,
             child:const Image(image: AssetImage("assets/images/child_logo.png"),),
-            navRoutes: '',
+            navRoutes: Routes.childProfileScreen,
           ),
         ],
       ),
