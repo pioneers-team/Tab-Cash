@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:tab_cash/core/components/custom_button.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 import 'package:tab_cash/view/withdraw/widgets/taps_withdraw.dart';
@@ -29,11 +30,12 @@ class AddMoneyScreen extends StatelessWidget {
             },
             icon: const Icon(Icons.arrow_back_ios,),
           ),
-          actions:  [IconButton(
-              onPressed: (){
-                Navigator.pop(context);
-              },
-              icon:const Icon( Icons.notifications_none_outlined,size: 25.0))],
+          actions: const[
+            Padding(
+              padding:  EdgeInsets.only(right: 15.0),
+              child: Icon(IconlyLight.notification),
+            ),
+          ],
         ),
         body: GestureDetector(
           onTap: (){

@@ -9,6 +9,14 @@ import '../../core/styles/colors.dart';
 class RegisterScreen extends StatelessWidget {
    RegisterScreen({Key? key}) : super(key: key);
   final formKey = GlobalKey<FormState>();
+   TextEditingController firstNameController = TextEditingController();
+   TextEditingController lastNameController = TextEditingController();
+   TextEditingController idNumberController = TextEditingController();
+   TextEditingController phoneController = TextEditingController();
+   TextEditingController passwordController = TextEditingController();
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +67,7 @@ class RegisterScreen extends StatelessWidget {
                           Container(
                             width: MediaQuery.of(context).size.width/2.55,
                             child: CustomTextField(
+                              controller: firstNameController,
                               validate: (String? value){
                                 if(value!.isEmpty){
                                   return "Enter First Name";
@@ -72,6 +81,7 @@ class RegisterScreen extends StatelessWidget {
                           Container(
                             width: MediaQuery.of(context).size.width/2.28,
                             child: CustomTextField(
+                              controller: lastNameController,
                                 validate: (String? value){
                                   if(value!.isEmpty){
                                     return "Enter Last Name";
@@ -88,6 +98,7 @@ class RegisterScreen extends StatelessWidget {
 
                       // Text Form Field:::
                       CustomTextField(
+                        controller: idNumberController,
                         keyboardType: TextInputType.number,
                         label: "Enter Your ID Number",
                         validate: (String? value){
@@ -101,6 +112,7 @@ class RegisterScreen extends StatelessWidget {
                         height: 20.0,
                       ),
                       CustomTextField(
+                        controller: phoneController,
                         validate: (String? value){
                           if(value!.isEmpty){
                             return "Please Enter Your Number";
@@ -119,6 +131,7 @@ class RegisterScreen extends StatelessWidget {
                         height: 20.0,
                       ),
                       CustomTextField(
+                        controller: passwordController,
                         validate: (String? value){
                           if(value!.isEmpty){
                             return "Enter Your Password Please";

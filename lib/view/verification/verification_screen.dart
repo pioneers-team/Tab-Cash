@@ -8,6 +8,8 @@ import '../../config/routes/routes.dart';
 import '../../core/components/custom_button.dart';
 
 class VerificationScreen extends StatefulWidget {
+
+
   const VerificationScreen({Key? key}) : super(key: key);
 
   @override
@@ -15,6 +17,13 @@ class VerificationScreen extends StatefulWidget {
 }
 
 class _VerificationScreenState extends State<VerificationScreen> {
+
+  TextEditingController first = TextEditingController();
+  TextEditingController second = TextEditingController();
+  TextEditingController third = TextEditingController();
+  TextEditingController forth = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,10 +74,18 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Otp(),
-                            Otp(),
-                            Otp(),
-                            Otp(),
+                            Otp(
+                              controller: first,
+                            ),
+                            Otp(
+                              controller: second,
+                            ),
+                            Otp(
+                              controller: third,
+                            ),
+                            Otp(
+                              controller: forth,
+                            ),
                           ],
                         )
                     ),

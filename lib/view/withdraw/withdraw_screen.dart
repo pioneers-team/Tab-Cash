@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconly/iconly.dart';
 import 'package:tab_cash/core/components/custom_button.dart';
 import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/core/styles/colors.dart';
@@ -44,11 +45,12 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
             },
             icon: const Icon(Icons.arrow_back_ios,),
           ),
-          actions:  [IconButton(
-            onPressed: (){
-
-            },
-             icon:const Icon( Icons.notifications_none_outlined,size: 25.0))],
+          actions: const[
+            Padding(
+              padding:  EdgeInsets.only(right: 15.0),
+              child: Icon(IconlyLight.notification),
+            ),
+          ],
         ),
         body: _withDrawBody(context),
       ),
