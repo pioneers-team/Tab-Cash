@@ -48,10 +48,8 @@ class MainFeature extends StatelessWidget {
             context,
             title: "Kids",
             backgroundColor: AppColors.white,
-            child: const Icon(
-              Icons.child_care_outlined,
-              size: 45,
-            ), navRoutes: '',
+            child:const Image(image: AssetImage("assets/images/child_logo.png"),),
+            navRoutes: '',
           ),
         ],
       ),
