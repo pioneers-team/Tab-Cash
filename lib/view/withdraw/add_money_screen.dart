@@ -3,15 +3,29 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconly/iconly.dart';
 import 'package:tab_cash/core/components/custom_button.dart';
 import 'package:tab_cash/core/styles/colors.dart';
-import 'package:tab_cash/view/withdraw/widgets/taps_withdraw.dart';
-
 import '../../core/components/custom_text_field_money.dart';
 import '../../core/constants/app_images.dart';
 
-class AddMoneyScreen extends StatelessWidget {
+class AddMoneyScreen extends StatefulWidget {
    AddMoneyScreen({Key? key}) : super(key: key);
 
+  @override
+  State<AddMoneyScreen> createState() => _AddMoneyScreenState();
+}
+
+class _AddMoneyScreenState extends State<AddMoneyScreen> {
+   final amountController= TextEditingController();
+
+   final passwordController= TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
+  @override
+  void dispose() {
+    amountController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -49,30 +63,9 @@ class AddMoneyScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(height: 8.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:  [
-                        TapsWithdrawButton(
-                          title: 'Find ATM',
-                          backgroundColor:
-                          const Color(0xFFF5F5F5),
-                          textColor:
-                          Colors.black,
-                          function: (){
-                          },
-                        ),
-                        TapsWithdrawButton(title: 'Withdraw ATM',
-                          function: (){
 
-                          },
-                          textColor: Colors.white,
-                          backgroundColor: Colors.black
-
-                        ),
-                      ],
-                    ),
                     const SizedBox(height: 24.0,),
-                    Center(child: Image.asset(AppImages.withdrawImg)),
+                    Center(child: Image.asset(AppImages.findAtm)),
                     const SizedBox(height: 24.0,),
 
                     Padding(
@@ -85,7 +78,9 @@ class AddMoneyScreen extends StatelessWidget {
                             fontSize: 16.0
                           ),),
                          const SizedBox(height: 16.0,),
-                          CustomTextFieldMoney(hintText: '00,000,00 ',validator: (String? value) {
+                          CustomTextFieldMoney(
+                            controller: amountController,
+                            hintText: '00,000,00 ',validator: (String? value) {
                             if(value!.isEmpty){
                               return "Please fill the field";
                             }else if(  value.length < 2){
@@ -102,14 +97,16 @@ class AddMoneyScreen extends StatelessWidget {
                           ),),
                           const SizedBox(height: 16.0,),
                           CustomTextFieldMoney(
+                            controller: passwordController,
                             textInputType: TextInputType.visiblePassword,
                             obscureText: true,
-                            hintText: '',validator: (String? value) {RegExp regex =
-                          RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
+                            hintText: '',validator: (String? value) {
+                          //     RegExp regex =
+                          // RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
                           if (value!.isEmpty) {
                             return 'Please enter password';
                           } else {
-                            if (!regex.hasMatch(value)) {
+                            if (value.length<8) {
                               return 'Enter valid password';
                             } else {
                               return null;
@@ -126,6 +123,8 @@ class AddMoneyScreen extends StatelessWidget {
                         label: 'Next',
                       onTap: ()async{
                         if(_formKey.currentState!.validate()){
+                          amountController.clear();
+                          passwordController.clear();
                           await  showOtpMessage(context);
                         }
                       }
@@ -143,6 +142,9 @@ class AddMoneyScreen extends StatelessWidget {
   Future<dynamic> showOtpMessage(BuildContext context) {
     return showDialog(context: context, builder: (context) =>AlertDialog(
                       backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
                       content: Container(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -158,7 +160,7 @@ class AddMoneyScreen extends StatelessWidget {
                                   backgroundColor: Colors.orange,
                                   child: Icon(Icons.check,color: Colors.white,),
                                 ),
-                                const SizedBox(width: 8.0,),
+                                const SizedBox(width: 16.0,),
                                 Text('Sent successfully',style: GoogleFonts.poppins(
                                   color: AppColors.primary,
                                   fontWeight: FontWeight.bold,

@@ -6,16 +6,19 @@ class CustomTextFieldMoney extends StatelessWidget {
     required this.validator,
     required this.hintText,
     this.obscureText=false,
-    this.textInputType = TextInputType.number
+    this.textInputType = TextInputType.number,
+    this.controller
   });
 
   final String hintText;
+   TextEditingController? controller;
   final bool obscureText;
   TextInputType textInputType;
   String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       textAlign: TextAlign.center,
       validator: validator,
       obscureText: obscureText,

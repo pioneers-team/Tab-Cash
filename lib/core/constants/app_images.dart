@@ -3,6 +3,8 @@
 class AppImages{
   // svg
   static const String baseSvg='assets/svg';
+  static const String parentControlSvg='$baseSvg/parent_control.svg';
+  static const String smartCardSvg='$baseSvg/smart_card.svg';
   static const String transMoneySvg='$baseSvg/Transfer Money.svg';
   static const String trans2Svg='$baseSvg/tran 2.svg';
   static const String doneSvg='$baseSvg/done.svg';

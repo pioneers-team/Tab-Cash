@@ -8,10 +8,18 @@ import '../../core/constants/app_images.dart';
 import '../../core/styles/colors.dart';
 
 
-class TransferScreen extends StatelessWidget {
+class TransferScreen extends StatefulWidget {
    TransferScreen({Key? key}) : super(key: key);
 
+  @override
+  State<TransferScreen> createState() => _TransferScreenState();
+}
+
+class _TransferScreenState extends State<TransferScreen> {
   final _formKey = GlobalKey<FormState>();
+  final addAmountController= TextEditingController();
+  final numberController= TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -57,6 +65,7 @@ class TransferScreen extends StatelessWidget {
                       ),),
                       const SizedBox(height: 16.0,),
                        CustomTextFieldMoney(
+                         controller: addAmountController,
                            validator: (String? value) {
                          if(value!.isEmpty){
                            return "Please add a Amount ";
@@ -73,6 +82,7 @@ class TransferScreen extends StatelessWidget {
                       ),),
                       const SizedBox(height: 16.0,),
                       CustomTextFieldMoney(
+                        controller: numberController,
                         textInputType: TextInputType.phone,
                           hintText: '',validator:(String? value) {
                         if(value!.isEmpty){
@@ -92,6 +102,8 @@ class TransferScreen extends StatelessWidget {
                     onTap: ()async{
                       if(_formKey.currentState!.validate()){
                         await  showOtpMessage(context);
+                        addAmountController.clear();
+                        numberController.clear();
                       }
                     }
                 ),
@@ -102,6 +114,7 @@ class TransferScreen extends StatelessWidget {
       ),
     );
   }
+
   Future<dynamic> showOtpMessage(BuildContext context) {
     return showDialog(context: context, builder: (context) =>AlertDialog(
       backgroundColor: Colors.white,
@@ -109,7 +122,7 @@ class TransferScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.0)
       ),
       content: Container(
-        
+
         padding: const EdgeInsets.all(8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -136,5 +149,4 @@ class TransferScreen extends StatelessWidget {
       ),
     ) ,);
   }
-
 }

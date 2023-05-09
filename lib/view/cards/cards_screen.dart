@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tab_cash/core/components/custom_button.dart';
-import 'package:tab_cash/core/components/custom_text_field.dart';
 import 'package:tab_cash/core/constants/app_images.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 import 'package:tab_cash/core/utils/media_quary.dart';
@@ -13,7 +12,7 @@ import '../../core/components/custom_text_field_money.dart';
 
 
 class CardsScreen extends StatefulWidget {
-   CardsScreen({Key? key}) : super(key: key);
+   const CardsScreen({Key? key}) : super(key: key);
 
   @override
   State<CardsScreen> createState() => _CardsScreenState();
@@ -21,12 +20,12 @@ class CardsScreen extends StatefulWidget {
 
 class _CardsScreenState extends State<CardsScreen> {
   int cardValue = 0;
-  final _cardValue = TextEditingController();
+  final _cardValueController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
-    _cardValue.dispose();
+    _cardValueController.dispose();
     super.dispose();
   }
 
@@ -57,7 +56,7 @@ class _CardsScreenState extends State<CardsScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 48.0,top: 32.0),
-                        child: Image.asset('assets/images/smart_card_vector.png'),
+                        child: Image.asset('assets/images/smart_card_vector.png',fit: BoxFit.cover,),
                       ),
                       const Padding(
                         padding: EdgeInsets.only(left: 48.0,top: 32.0),
@@ -86,7 +85,9 @@ class _CardsScreenState extends State<CardsScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 32.0,vertical: 8.0),
                   child:Form(
                     key: formKey,
-                    child: CustomTextFieldMoney(hintText: '000',validator: (String? value) {
+                    child: CustomTextFieldMoney(
+                      controller: _cardValueController,
+                      hintText: '000',validator: (String? value) {
                       if(value!.isEmpty){
                         return "Please Enter Your money value";
                       }else if(  value.length < 2){
@@ -103,9 +104,10 @@ class _CardsScreenState extends State<CardsScreen> {
                   if(formKey.currentState!.validate()){
                     var rng =  Random();
                     cardValue =  rng.nextInt(10000);
-                    print('$cardValue');
                     await showMessage(context);
+                    _cardValueController.clear();
                   }
+
 
                 })
 
@@ -120,6 +122,9 @@ class _CardsScreenState extends State<CardsScreen> {
   Future<dynamic> showMessage(BuildContext context) {
     return showDialog(context: context, builder: (context) =>AlertDialog(
       backgroundColor: const Color(0xFF0E0E0C),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0)
+      ),
       content:  Container(
         width: double.infinity,
         decoration:  BoxDecoration(

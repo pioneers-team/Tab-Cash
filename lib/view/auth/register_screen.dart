@@ -131,6 +131,7 @@ class RegisterScreen extends StatelessWidget {
                         height: 20.0,
                       ),
                       CustomTextField(
+                        obscureText: true,
                         controller: passwordController,
                         validate: (String? value){
                           if(value!.isEmpty){
