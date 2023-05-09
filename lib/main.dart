@@ -3,8 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tab_cash/config/routes/routes.dart';
+import 'package:tab_cash/core/helper/search_helper.dart';
 import 'package:tab_cash/view/layout/layout_screen.dart';
+import 'package:tab_cash/view/withdraw/maps/maps_screen.dart';
 import 'package:tab_cash/view_model/layout_cubit/layout_cubit.dart';
+import 'package:tab_cash/view_model/maps_cubit/cubit/search_cubit.dart';
+import 'package:tab_cash/view_model/maps_cubit/repository/maps_repo.dart';
 import 'core/share/bloc_observer.dart';
 
 void main() {
@@ -38,9 +42,10 @@ class MyApp extends StatelessWidget {
               displayMedium: GoogleFonts.poppins(),
             )
         ),
-       onGenerateRoute: AppRoutes.onGenerateRoute,
-        //home: LayoutScreen(),
-      ),
+         onGenerateRoute: AppRoutes.onGenerateRoute,
+
+        ),
+
     );
   }
 }
