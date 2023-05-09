@@ -108,7 +108,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
           const SizedBox(height: 16.0,),
           customButton(context, color: AppColors.secondColor, label: 'Next',onTap: (){
             // nav to selected screen
-            isFindAtm?Navigator.pushNamed(context, 'Maps Screen'):
+            isFindAtm?Navigator.pushNamed(context, Routes.mapsScreen):
             Navigator.pushNamed(context, Routes.addMoneyScreen);
           })
 
