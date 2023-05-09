@@ -40,7 +40,7 @@ class CurrentBalance extends StatelessWidget {
                 style: Theme.of(context).textTheme.displayMedium!.copyWith(
                     color: moneyAmountColor,
                     fontWeight: FontWeight.bold,
-                    fontSize: 20
+                    fontSize: 24.0
                 ),
               )
             ],
