@@ -40,7 +40,7 @@ class CustomTransaction extends StatelessWidget {
               size: 35,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 15,
           ),
           Column(
@@ -62,7 +62,7 @@ class CustomTransaction extends StatelessWidget {
                     style: Theme.of(context).textTheme.displayMedium!.copyWith(
                         fontSize: 12, color: AppColors.primaryColorGray),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Text(
@@ -74,7 +74,7 @@ class CustomTransaction extends StatelessWidget {
               )
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Text(
             "EGP $transactionAmount",
             style: Theme.of(context).textTheme.displayMedium!.copyWith(

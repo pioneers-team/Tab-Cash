@@ -8,6 +8,7 @@ class CurrentBalance extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         // Your Money :)
         RichText(
@@ -37,7 +38,6 @@ class CurrentBalance extends StatelessWidget {
             ],
           ),
         ),
-
         Row(
           children: [
             const Icon(
@@ -52,7 +52,7 @@ class CurrentBalance extends StatelessWidget {
               style: Theme.of(context).textTheme.displayMedium!.copyWith(
                   color: AppColors.primaryColorGray,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20),
+                  fontSize: 18),
             )
           ],
         ),

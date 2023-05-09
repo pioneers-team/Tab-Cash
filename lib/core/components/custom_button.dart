@@ -13,7 +13,7 @@ Widget customButton(context,{
     onTap: onTap,
     child: Container(
       height: screenHeight / 13,
-      width: screenWidth / 1.2,
+      width: screenWidth / 1.1,
       decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(15)),

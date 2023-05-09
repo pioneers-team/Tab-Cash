@@ -15,18 +15,15 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
-     // FocusManager.instance.primaryFocus?.unfocus();
+      FocusManager.instance.primaryFocus?.unfocus();
     },
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-        ),
+
         body: SingleChildScrollView(
           physics:const BouncingScrollPhysics(),
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: const EdgeInsets.only(top: 60,right: 18,left: 18,bottom: 18),
               child: SafeArea(
                 child: Form(
                   key: formKey,
