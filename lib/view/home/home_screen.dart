@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:tab_cash/view/home/widgets/current_balance.dart';
+import 'package:tab_cash/core/components/custom_current_balance.dart';
 import 'package:tab_cash/view/home/widgets/main_feature.dart';
 import 'package:tab_cash/view/home/widgets/offers.dart';
 import 'package:tab_cash/core/components/custom_transaction.dart';
 
+import '../../core/components/custom_row_text_widget.dart';
 import '../../core/styles/colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             // Current Balance Widget:
-            const CurrentBalance(),
+             const CurrentBalance(moneyAmount: 1550, currentBalance: 'Current Balance',),
             const SizedBox(
               height: 30,
             ),
@@ -81,34 +82,3 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class CustomRow extends StatelessWidget {
-  final String title;
-
-  const CustomRow({
-    super.key,
-    required this.title,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: Theme.of(context).textTheme.displayMedium!.copyWith(
-              color: AppColors.secondColor,
-              fontSize: 23,
-              fontWeight: FontWeight.w500),
-        ),
-        Text(
-          "View all",
-          style: Theme.of(context).textTheme.displayMedium!.copyWith(
-              color: AppColors.primaryColorGray,
-              fontSize: 17,
-              fontWeight: FontWeight.w500),
-        ),
-      ],
-    );
-  }
-}

@@ -4,6 +4,7 @@ import 'package:tab_cash/config/routes/routes.dart';
 import 'package:tab_cash/core/components/custom_button.dart';
 import 'package:tab_cash/view/layout/layout_screen.dart';
 
+import '../../core/components/custom_row_text_widget.dart';
 import '../../core/components/custom_transaction.dart';
 import '../../core/styles/colors.dart';
 
@@ -42,7 +43,10 @@ class DashboardScreen extends StatelessWidget {
               context,
               color: AppColors.secondColor,
               label: "Child payments",
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, Routes.childProfileScreen, (route) => false);
+              },
             ),
             const SizedBox(
               height: 20.0,
@@ -90,34 +94,4 @@ class DashboardScreen extends StatelessWidget {
   }
 }
 
-class CustomRow extends StatelessWidget {
-  final String title;
 
-  const CustomRow({
-    super.key,
-    required this.title,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: Theme.of(context).textTheme.displayMedium!.copyWith(
-              color: AppColors.secondColor,
-              fontSize: 23,
-              fontWeight: FontWeight.w500),
-        ),
-        Text(
-          "View all",
-          style: Theme.of(context).textTheme.displayMedium!.copyWith(
-              color: AppColors.primaryColorGray,
-              fontSize: 17,
-              fontWeight: FontWeight.w500),
-        ),
-      ],
-    );
-  }
-}
