@@ -25,7 +25,7 @@ class ChildProfileScreen extends StatelessWidget {
           leading: IconButton(
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                  context, Routes.dashboardScreen, (route) => false);
+                  context, Routes.layoutScreen, (route) => false);
             },
             icon: const Icon(
               IconlyLight.arrow_left_2,
