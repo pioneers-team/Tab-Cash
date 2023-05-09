@@ -102,7 +102,7 @@ class _CardsScreenState extends State<CardsScreen> {
                 customButton(context, color: AppColors.secondColor, label: 'Virtual Card',onTap: ()async{
                   if(formKey.currentState!.validate()){
                     var rng =  Random();
-                    cardValue =  rng.nextInt(1000);
+                    cardValue =  rng.nextInt(10000);
                     print('$cardValue');
                     await showMessage(context);
                   }
@@ -137,7 +137,7 @@ class _CardsScreenState extends State<CardsScreen> {
                 Align(
                 alignment: Alignment.topLeft
                 ,
-                    child: Image.asset(AppImages.smartCard)),
+                    child: Image.asset('assets/images/smart_card_vector.png')),
                 const Spacer(),
                 Image.asset(AppImages.logo,height: 16.0,)
               ],
@@ -153,7 +153,7 @@ class _CardsScreenState extends State<CardsScreen> {
             const SizedBox(height: 16.0,),
             Row(
               children: [
-                const Text('Name Surname',style: TextStyle(
+                const Text('Expired after 24',style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,fontSize: 16.0
                 ),),
