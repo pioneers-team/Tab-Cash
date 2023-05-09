@@ -15,7 +15,7 @@ class MainFeature extends StatelessWidget {
         children: [
           featureWidget(
             context,
-            navRoutes: '',
+            navRoutes: Routes.transferScreen,
             backgroundColor: AppColors.primary,
             title: "Transfer",
             child: const Icon(
