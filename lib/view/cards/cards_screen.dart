@@ -145,7 +145,7 @@ class _CardsScreenState extends State<CardsScreen> {
              const SizedBox(height: 8.0,),
              Padding(
                padding: const EdgeInsets.symmetric(vertical: 8.0,),
-               child: Text('$cardValue .... $cardValue ',style: const TextStyle(
+               child: Text('$cardValue $cardValue $cardValue',style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,fontSize: 28.0
             ),),

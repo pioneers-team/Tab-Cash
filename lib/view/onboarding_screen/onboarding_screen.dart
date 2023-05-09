@@ -37,10 +37,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     OnboardingModel(image: AppImages.trans2Svg,
         title: 'Maps',
         description: 'Send money to anyone ,typically fast and secure, with transaction history stored in the app.'),
-    OnboardingModel(image: AppImages.trans2Svg,
+    OnboardingModel(image: AppImages.smartOnboarding,
         title: 'Smart Card',
         description: "A physical card linked to the user's e-wallet account that can be used to make payments at merchants."),
-    OnboardingModel(image: AppImages.trans2Svg,
+    OnboardingModel(image: AppImages.smartCard,
         title: 'Parental Controls',
         description: "Allows parents to set a spending limit on their child's e-wallet account, view transaction history."),
 

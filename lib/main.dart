@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tab_cash/config/routes/routes.dart';
 import 'package:tab_cash/view/cards/cards_screen.dart';
+import 'package:tab_cash/view/child_payment.dart';
+import 'package:tab_cash/view/withdraw/add_money_screen.dart';
 import 'package:tab_cash/view/withdraw/transfer_screen.dart';
 import 'package:tab_cash/view/withdraw/withdraw_screen.dart';
 import 'package:tab_cash/view_model/layout_cubit/layout_cubit.dart';
