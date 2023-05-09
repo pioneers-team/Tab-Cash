@@ -38,12 +38,12 @@ class _CardsScreenState extends State<CardsScreen> {
           FocusManager.instance.primaryFocus?.unfocus();
         },
         child: Scaffold(
-          appBar: AppBar(),
           body: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
 
             child: Column(
               children: [
+                const SizedBox(height: 8.0,),
                 Container(
                   width: double.infinity,
                   height: 200,
@@ -89,8 +89,11 @@ class _CardsScreenState extends State<CardsScreen> {
                     child: CustomTextFieldMoney(hintText: '000',validator: (String? value) {
                       if(value!.isEmpty){
                         return "Please Enter Your money value";
-                      }else if(value.length > 5 || value.length < 2){
+                      }else if(  value.length < 2){
                         return "Your money is not enough";
+                      }
+                      else if(value.length > 5){
+                        return 'Your money is too high';
                       }
                     },),
                   ),
