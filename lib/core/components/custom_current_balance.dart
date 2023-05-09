@@ -1,35 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 
 class CurrentBalance extends StatelessWidget {
-  const CurrentBalance({Key? key}) : super(key: key);
+  final int moneyAmount;
+  final String currentBalance;
+   final double moneyAmountSize ;
+   final Color moneyAmountColor;
+   final Color currentBalanceColor;
+
+  const CurrentBalance({Key? key, required this.moneyAmount, required this.currentBalance, this.moneyAmountSize = 45,  this.moneyAmountColor = AppColors.secondColor,  this.currentBalanceColor= AppColors.primaryColorGray} ) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         // Your Money :)
         RichText(
           text: TextSpan(
             text: 'EGP ',
             style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                color: AppColors.secondColor,
+                color: moneyAmountColor,
                 fontWeight: FontWeight.bold,
-                fontSize: 45),
+                fontSize: moneyAmountSize,
+            ),
             children:  <TextSpan>[
               TextSpan(
-                text: '1550.',
+                text: '$moneyAmount',
                 style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                    color: AppColors.secondColor,
+                    color: moneyAmountColor,
                     fontWeight: FontWeight.bold,
-                    fontSize: 45
+                    fontSize: moneyAmountSize
                 ),
               ),
               TextSpan(
-                text: '00',
+                text: '.00',
                 style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                    color: AppColors.secondColor,
+                    color: moneyAmountColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 20
                 ),
@@ -37,22 +46,21 @@ class CurrentBalance extends StatelessWidget {
             ],
           ),
         ),
-
         Row(
           children: [
-            const Icon(
-              Icons.visibility_outlined,
-              color: AppColors.primaryColorGray,
+             Icon(
+              IconlyLight.show,
+              color: currentBalanceColor,
             ),
             const SizedBox(
               width: 10,
             ),
             Text(
-              "Current Balance",
+              currentBalance,
               style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                  color: AppColors.primaryColorGray,
+                  color: currentBalanceColor,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20),
+                  fontSize: 18),
             )
           ],
         ),

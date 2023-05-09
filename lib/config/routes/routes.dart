@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:tab_cash/view/child_profile/child_profile_screen.dart';
+import 'package:tab_cash/view/dashboard/dashboard_screen.dart';
 import 'package:tab_cash/view/home/home_screen.dart';
 import 'package:tab_cash/view/success_screen/success_screen.dart';
 import 'package:tab_cash/view/auth/login_screen.dart';
@@ -25,6 +27,8 @@ class Routes{
   static const String transferScreen = '/transferScreen';
   static const String addMoneyScreen = '/addMoneyScreen';
   static const String withdrawScreen = '/WithdrawScreen';
+  static const String dashboardScreen = '/dashboardScreen';
+  static const String childProfileScreen = '/childProfileScreen';
 
 }
 
@@ -33,7 +37,7 @@ class AppRoutes{
     switch(routeSettings.name){
       case Routes.splashScreen:
         return MaterialPageRoute(builder: (context)=>SplashScreen(),
-            settings: routeSettings);
+            settings: routeSettings,);
       case Routes.onboardingScreen:
         return MaterialPageRoute(builder: (context)=>const OnboardingScreen(),
             settings: routeSettings);
@@ -61,8 +65,15 @@ class AppRoutes{
       case Routes.verificationScreen:
         return MaterialPageRoute(builder: (context)=>VerificationScreen(),
             settings: routeSettings);
+
       case Routes.layoutScreen:
         return MaterialPageRoute(builder: (context)=>LayoutScreen(),
+            settings: routeSettings);
+      case Routes.dashboardScreen:
+        return MaterialPageRoute(builder: (context)=>DashboardScreen(),
+            settings: routeSettings);
+      case Routes.childProfileScreen:
+        return MaterialPageRoute(builder: (context)=>ChildProfileScreen(),
             settings: routeSettings);
 
 

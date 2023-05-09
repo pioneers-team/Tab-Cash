@@ -1,5 +1,4 @@
-
-
- enum WithdrawType{
-   findATM,withdrawATM
+enum WithdrawType {
+  findATM,
+  withdrawATM,
 }
