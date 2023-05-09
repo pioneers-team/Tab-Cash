@@ -54,7 +54,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             const DrawerItem(
               label: 'Dashboard',
               iconData: IconlyLight.category,
-              screenName: '',
+              screenName: Routes.dashboardScreen,
             ),
             const DrawerItem(
               label: 'Tracking',
