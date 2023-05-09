@@ -15,18 +15,18 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
             // Current Balance Widget:
              const CurrentBalance(moneyAmount: 1550, currentBalance: 'Current Balance',),
             const SizedBox(
-              height: 30,
+              height: 16.0,
             ),
             // ** Main Feature Widget :) **
             const MainFeature(),
             const SizedBox(
-              height: 25,
+              height: 8.0,
             ),
 
             // Custom Row Widget :
@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
 
             // Offers :)
             const Offers(),
-            const SizedBox(height: 12,),
+            const SizedBox(height: 8.0,),
             const Padding(
               padding: EdgeInsets.only(right: 8.0,left: 8.0),
               child: CustomRow(
@@ -47,11 +47,10 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 12,
+              height: 8.0,
             ),
             Expanded(
               child: ListView(
-
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 children: const[
@@ -63,7 +62,7 @@ class HomeScreen extends StatelessWidget {
                     iconData: IconlyLight.arrow_up,
                     iconColor: Colors.green,
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10.0,),
                   CustomTransaction(
                     transactionTitle: "Cash Withdrawal",
                     transactionAmount: "1000",
@@ -71,7 +70,34 @@ class HomeScreen extends StatelessWidget {
                     transactionTime: "4:00 pm",
                     iconData: IconlyLight.arrow_down,
                     iconColor: Colors.red,
-                  )
+                  ),
+                  SizedBox(height: 10.0,),
+                  CustomTransaction(
+                    transactionTitle: "Cash Withdrawal",
+                    transactionAmount: "1000",
+                    transactionDate: "May 3,2022 ",
+                    transactionTime: "4:00 pm",
+                    iconData: IconlyLight.arrow_down,
+                    iconColor: Colors.red,
+                  ),
+                  SizedBox(height: 10.0,),
+                  CustomTransaction(
+                    transactionTitle: "Cash Withdrawal",
+                    transactionAmount: "1000",
+                    transactionDate: "May 3,2022 ",
+                    transactionTime: "4:00 pm",
+                    iconData: IconlyLight.arrow_down,
+                    iconColor: Colors.red,
+                  ),
+                  SizedBox(height: 10.0,),
+                  CustomTransaction(
+                    transactionTitle: "Charge Wallet",
+                    transactionAmount: "400",
+                    transactionDate: "May 3,2022 ",
+                    transactionTime: "4:00 pm",
+                    iconData: IconlyLight.arrow_up,
+                    iconColor: Colors.green,
+                  ),
                 ],
               ),
             ),
