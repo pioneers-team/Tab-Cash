@@ -6,7 +6,7 @@ class DioHelper {
   static void init() async {
     dio = Dio(
       BaseOptions(
-        baseUrl: 'https://student.valuxapps.com/api/',
+        baseUrl: '',
         receiveDataWhenStatusError: true,
         headers: {
           'Content-Type': 'application/json',
