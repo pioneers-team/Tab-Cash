@@ -10,6 +10,8 @@ class LoginScreen extends StatelessWidget {
 
    LoginScreen({Key? key}) : super(key: key);
   final formKey = GlobalKey<FormState>();
+   TextEditingController phoneController = TextEditingController();
+   TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +59,7 @@ class LoginScreen extends StatelessWidget {
                       // Text Form Field:::
 
                       CustomTextField(
+                        controller: phoneController,
                         validate: (String? value){
                           if(value!.isEmpty){
                             return "Please Enter Your Number";
@@ -75,6 +78,7 @@ class LoginScreen extends StatelessWidget {
                         height: 20.0,
                       ),
                       CustomTextField(
+                        controller: passwordController,
                         validate: (String? value){
                           if(value!.isEmpty){
                             return "Please Enter Your Password";
@@ -83,9 +87,7 @@ class LoginScreen extends StatelessWidget {
                         keyboardType: TextInputType.text,
                         label: "Enter Password",
                         suffixIcon: Icons.visibility_outlined,
-
                       ),
-
                       Align(
                         alignment: Alignment.bottomRight,
                         child: TextButton(

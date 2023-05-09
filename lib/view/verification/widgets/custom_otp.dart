@@ -7,10 +7,11 @@ import 'package:tab_cash/core/styles/colors.dart';
 
 class Otp extends StatelessWidget {
 
-  TextEditingController controller = TextEditingController();
+ final TextEditingController controller ;
 
    Otp({
     Key? key,
+     required this.controller,
   }) : super(key: key);
 
   @override
