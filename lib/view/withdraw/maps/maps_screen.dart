@@ -330,6 +330,8 @@ class _MapsScreenState extends State<MapsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.transparent,
+        elevation: 0.0,
         title: Text(
           "ATM Tracking",
           style: Theme.of(context).textTheme.displayMedium!.copyWith(

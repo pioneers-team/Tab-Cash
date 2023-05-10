@@ -83,7 +83,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                           child: SizedBox(
                             height: 300,
                               width: 300,
-                              child: Center(child: Image.asset(AppImages.logo)))),
+                              child: Center(child: Image.asset('assets/images/Tap_Cash_logo (1).png')))),
 
                 ],
     ),

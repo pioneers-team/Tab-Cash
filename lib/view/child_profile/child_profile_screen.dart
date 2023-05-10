@@ -101,6 +101,9 @@ class ChildProfileScreen extends StatelessWidget {
                 context,
                 color: AppColors.secondColor,
                 label: "Go to payments",
+                onTap: (){
+                  Navigator.pushNamed(context, Routes.childPayScreen);
+                }
               ),
               const SizedBox(
                 height: 18,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tab_cash/core/helper/location_helper.dart';
 import 'package:tab_cash/core/helper/search_helper.dart';
+import 'package:tab_cash/view/child_payment.dart';
 import 'package:tab_cash/view/child_profile/child_profile_screen.dart';
 import 'package:tab_cash/view/dashboard/dashboard_screen.dart';
 import 'package:tab_cash/view/get_started/get_started_screen.dart';
@@ -42,6 +43,7 @@ class Routes {
   static const String mapsScreen = '/mapsScreen';
   static const String childRegisterScreen = '/childRegisterScreen';
   static const String getStartedScreen = '/getStartedScreen';
+  static const String childPayScreen = '/childPayScreen';
 
 }
 
@@ -80,6 +82,9 @@ class AppRoutes {
             settings: routeSettings);
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (context) => HomeScreen(),
+            settings: routeSettings);
+        case Routes.childPayScreen:
+        return MaterialPageRoute(builder: (context) => ChildPayment(),
             settings: routeSettings);
       case Routes.verificationScreen:
         return MaterialPageRoute(builder: (context) => VerificationScreen(),

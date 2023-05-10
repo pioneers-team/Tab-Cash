@@ -20,6 +20,8 @@ class CardsScreen extends StatefulWidget {
 
 class _CardsScreenState extends State<CardsScreen> {
   int cardValue = 0;
+  int cardValue2 = 0;
+  int cardValue3 = 0;
   final _cardValueController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
@@ -104,6 +106,8 @@ class _CardsScreenState extends State<CardsScreen> {
                   if(formKey.currentState!.validate()){
                     var rng =  Random();
                     cardValue =  rng.nextInt(10000);
+                    cardValue2 =  rng.nextInt(10000);
+                    cardValue3=  rng.nextInt(10000);
                     await showMessage(context);
                     _cardValueController.clear();
                   }
@@ -150,7 +154,7 @@ class _CardsScreenState extends State<CardsScreen> {
              const SizedBox(height: 8.0,),
              Padding(
                padding: const EdgeInsets.symmetric(vertical: 8.0,),
-               child: Text('$cardValue $cardValue $cardValue',style: const TextStyle(
+               child: Text('$cardValue $cardValue2 $cardValue3',style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,fontSize: 28.0
             ),),
@@ -158,7 +162,7 @@ class _CardsScreenState extends State<CardsScreen> {
             const SizedBox(height: 16.0,),
             Row(
               children: [
-                const Text('Expired after 24',style: TextStyle(
+                const Text('Expired after 24h',style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,fontSize: 16.0
                 ),),
