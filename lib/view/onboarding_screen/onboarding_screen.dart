@@ -57,7 +57,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             if (isLast) {
               // nav to login screen
 
-      Navigator.pushReplacementNamed(context, Routes.loginScreen);
+      Navigator.pushReplacementNamed(context, Routes.getStartedScreen);
 
             } else {
               _controller.nextPage(duration: const Duration(milliseconds: 500),
@@ -73,7 +73,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
             InkWell
               (onTap: (){
-Navigator.pushReplacementNamed(context, Routes.loginScreen)     ;       },
+Navigator.pushReplacementNamed(context, Routes.getStartedScreen)     ;       },
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Padding(

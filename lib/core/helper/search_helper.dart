@@ -24,7 +24,7 @@ class SearchHelper {
         suggestionsBaseUrl,
         queryParameters: {
           'input': place,
-          'types': 'hospital',
+          'types': 'address',
           'components': 'country:eg',
           'key': googleApiKey,
           'sessiontoken': sessionToken

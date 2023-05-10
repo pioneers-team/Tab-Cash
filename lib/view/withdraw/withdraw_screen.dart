@@ -41,7 +41,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
           ),
           leading: IconButton(
             onPressed: (){
-              Navigator.pop(context);
+              Navigator.pushNamedAndRemoveUntil(context, Routes.layoutScreen, (route) => false);
             },
             icon: const Icon(Icons.arrow_back_ios,),
           ),

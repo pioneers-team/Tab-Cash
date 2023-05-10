@@ -4,6 +4,7 @@ import 'package:tab_cash/core/helper/location_helper.dart';
 import 'package:tab_cash/core/helper/search_helper.dart';
 import 'package:tab_cash/view/child_profile/child_profile_screen.dart';
 import 'package:tab_cash/view/dashboard/dashboard_screen.dart';
+import 'package:tab_cash/view/get_started/get_started_screen.dart';
 import 'package:tab_cash/view/home/home_screen.dart';
 import 'package:tab_cash/view/pay_bills/pay_bills_screen.dart';
 import 'package:tab_cash/view/success_screen/success_screen.dart';
@@ -15,6 +16,7 @@ import 'package:tab_cash/view/withdraw/transfer_screen.dart';
 import 'package:tab_cash/view/withdraw/withdraw_screen.dart';
 import 'package:tab_cash/view_model/maps_cubit/cubit/search_cubit.dart';
 
+import '../../view/auth/child_register.dart';
 import '../../view/layout/layout_screen.dart';
 import '../../view/onboarding_screen/onboarding_screen.dart';
 import '../../view/splash_screen/splash_screen.dart';
@@ -38,6 +40,8 @@ class Routes {
   static const String childProfileScreen = '/childProfileScreen';
   static const String payBillsScreen = '/payBillsScreen';
   static const String mapsScreen = '/mapsScreen';
+  static const String childRegisterScreen = '/childRegisterScreen';
+  static const String getStartedScreen = '/getStartedScreen';
 
 }
 
@@ -50,14 +54,20 @@ class AppRoutes {
       case Routes.onboardingScreen:
         return MaterialPageRoute(builder: (context) => const OnboardingScreen(),
             settings: routeSettings);
+        case Routes.getStartedScreen:
+        return MaterialPageRoute(builder: (context) => const GetStartedScreen(),
+            settings: routeSettings);
       case Routes.successScreen:
-        return MaterialPageRoute(builder: (context) => SuccessScreen(),
+        return MaterialPageRoute(builder: (context) => const SuccessScreen(),
             settings: routeSettings);
       case Routes.loginScreen:
         return MaterialPageRoute(builder: (context) => LoginScreen(),
             settings: routeSettings);
       case Routes.registerScreen:
         return MaterialPageRoute(builder: (context) => RegisterScreen(),
+            settings: routeSettings);
+        case Routes.childRegisterScreen:
+        return MaterialPageRoute(builder: (context) => ChildRegisterScreen(),
             settings: routeSettings);
       case Routes.transferScreen:
         return MaterialPageRoute(builder: (context) => TransferScreen(),

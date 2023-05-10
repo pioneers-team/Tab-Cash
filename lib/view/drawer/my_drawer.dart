@@ -34,10 +34,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   const CircleAvatar(
                     radius: 28.0,
                     backgroundColor: Colors.grey,
+                    backgroundImage: AssetImage("assets/images/child.png"),
                   ),
                   const SizedBox(height:12.0,),
                   Flexible(
-                    child:  Text('Ahmed Saide',
+                    child:  Text('Ahmed Said',
                       style: GoogleFonts.poppins(
                         color: Colors.black
                       ),),
@@ -62,9 +63,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
 
             ),
             const DrawerItem(
-              label: 'Favorites',
-              iconData: Icons.favorite_border_outlined,
-
+              label: 'Add Child',
+              iconData: IconlyLight.add_user,
+              screenName: Routes.childRegisterScreen,
             ),
             const DrawerItem(
               label: 'Languages',

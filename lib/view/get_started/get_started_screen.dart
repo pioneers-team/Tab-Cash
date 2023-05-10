@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tab_cash/core/components/custom_button.dart';
 import 'package:tab_cash/core/styles/colors.dart';
 
+import '../../config/routes/routes.dart';
+
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({Key? key}) : super(key: key);
 
@@ -51,7 +53,12 @@ class GetStartedScreen extends StatelessWidget {
                   ),
                   customButton(
                     context,
-                    onTap:(){},
+                    onTap:(){
+                      Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          Routes.loginScreen,
+                              (route) => false);
+                    },
                     color: AppColors.primary,
                     label: "Login",
                   ),
@@ -67,7 +74,12 @@ class GetStartedScreen extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              Routes.registerScreen,
+                                  (route) => false);
+                        },
                         child: const Text(
                           "Sign Up",
                           style: TextStyle(
